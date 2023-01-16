@@ -1,0 +1,27 @@
+@startuml
+class Banco{}
+class Usuario{
+    - numCuentaBancaria: int
+    - retiros: double
+    - user: String
+    - dinero: double
+    - nombreUsuario: String
+    + ingresar(numeroCuenta): int
+    + retirar (numeroCuenta,cantidad): int, double
+    + depositar((numeroCuenta, cantidad): int, double
+    + imprimir(numCuentaBancaria):int
+    + transferir(Usuario, cantidad) emisor receptor, double
+    + existenFondos(cantidad):boolean
+    + existeCuenta(numeroCuenta)boolean
+    + getNumCuentaBancaria()
+    + getDinero()
+}
+class Cuenta{
+    - numCuentaBancaria: int
+    - fondos: double
+    - nombreBanco: String
+}
+
+Banco --> Usuario
+Usuario --> Cuenta
+@enduml
